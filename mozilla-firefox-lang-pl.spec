@@ -43,12 +43,12 @@ rm -rf $RPM_BUILD_ROOT
 %post
 umask 022
 cd %{_chromedir}
-cat firefox-misc-installed-chrome.txt %{name}-installed-chrome.txt >installed-chrome.txt
+cat mozilla-firefox-misc-installed-chrome.txt %{name}-installed-chrome.txt >installed-chrome.txt
 
 %postun
 umask 022
 cd %{_chromedir}
-cat firefox-misc-installed-chrome.txt firefox-en-US-installed-chrome.txt >installed-chrome.txt
+cat mozilla-firefox-misc-installed-chrome.txt mozilla-firefox-en-US-installed-chrome.txt >installed-chrome.txt
 
 %files
 %defattr(644,root,root,755)
