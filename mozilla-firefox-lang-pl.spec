@@ -7,7 +7,7 @@ License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://dl.sourceforge.net/mozillapl/firefox-%{version}-pl-PL-langpack.xpi
 # Source0-md5:	90f1d5436153d0af34bda5a6e8e3adf1
-Source1:	mozilla-firefox-lang-pl-installed-chrome.txt
+Source1:	%{name}-installed-chrome.txt
 URL:		http://www.firefox.pl/
 BuildRequires:	unzip
 Requires(post,postun):	mozilla-firefox = %{version}
@@ -43,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 %post
 umask 022
 cd %{_chromedir}
-cat firefox-misc-installed-chrome.txt mozilla-firefox-lang-pl-installed-chrome.txt >installed-chrome.txt
+cat firefox-misc-installed-chrome.txt %{name}-installed-chrome.txt >installed-chrome.txt
 
 %postun
 umask 022
@@ -55,6 +55,6 @@ cat firefox-misc-installed-chrome.txt firefox-en-US-installed-chrome.txt >instal
 %{_chromedir}/pl-PL.jar
 %{_chromedir}/pl-unix.jar
 %{_chromedir}/PL.jar
-%{_chromedir}/mozilla-firefox-lang-pl-installed-chrome.txt
+%{_chromedir}/%{name}-installed-chrome.txt
 %{_firefoxdir}/defaults/*
 %{_firefoxdir}/searchplugins/*
