@@ -1,13 +1,13 @@
 Summary:	Polish resources for Mozilla-firefox
 Summary(pl):	Polskie pliki jêzykowe dla Mozilli-firefox
 Name:		mozilla-firefox-lang-pl
-Version:	1.0.1
+Version:	1.0.2
 Release:	0.1
 License:	GPL
 Group:		X11/Applications/Networking
 # Source0:	http://dl.sourceforge.net/mozillapl/firefox.%{version}.pl-PL.langpack.xpi
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/%{version}/linux-i686/xpi/pl-PL.xpi
-# Source0-md5:	1b3b32585d95e9c5441ec8daa5d1499f
+# Source0-md5:	3821fafaa216c63824e80dbf9855c8b1
 Source1:	%{name}-installed-chrome.txt
 URL:		http://www.firefox.pl/
 BuildRequires:	unzip
@@ -30,10 +30,11 @@ Polskie pliki jêzykowe dla Mozilli-firefox.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_chromedir},%{_firefoxdir}/{defaults,searchplugins}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_chromedir},%{_firefoxdir}/{defaults/profile,searchplugins}}
 
 unzip %{SOURCE0} -d $RPM_BUILD_ROOT%{_libdir}
 mv -f $RPM_BUILD_ROOT%{_libdir}/chrome/* $RPM_BUILD_ROOT%{_chromedir}
+mv -f $RPM_BUILD_ROOT%{_libdir}/*.rdf $RPM_BUILD_ROOT%{_firefoxdir}/defaults/profile
 #mv -f $RPM_BUILD_ROOT%{_libdir}/defaults/* $RPM_BUILD_ROOT%{_firefoxdir}/defaults
 #mv -f $RPM_BUILD_ROOT%{_libdir}/sp/* $RPM_BUILD_ROOT%{_firefoxdir}/searchplugins
 
@@ -56,5 +57,5 @@ cat %{_firefoxdir}/chrome/*-installed-chrome.txt >%{_firefoxdir}/chrome/installe
 #%{_chromedir}/pl-unix.jar
 #%{_chromedir}/PL.jar
 %{_chromedir}/%{name}-installed-chrome.txt
-#%{_firefoxdir}/defaults/*
+%{_firefoxdir}/defaults/profile/*.rdf
 #%{_firefoxdir}/searchplugins/*
