@@ -13,6 +13,8 @@ BuildRequires:	unzip
 Requires(post,postun):	mozilla-firefox >= %{version}-1.1
 Requires(post,postun):	textutils
 Requires:	mozilla-firefox >= %{version}-1.1
+Provides:	mozilla-firefox-lang-resources
+Obsoletes:	mozilla-firefox-lang-resources
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define	_firefoxdir	%{_libdir}/mozilla-firefox
