@@ -1,12 +1,12 @@
 Summary:	Polish resources for Mozilla-firefox
 Summary(pl):	Polskie pliki jêzykowe dla Mozilli-firefox
 Name:		mozilla-firefox-lang-pl
-Version:	0.9.1
-Release:	0.9.1
+Version:	0.10
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Networking
-Source0:	http://dl.sourceforge.net/mozillapl/firefox-%{version}-pl-PL-langpack.xpi
-# Source0-md5:	d5d0a04d135e03ae79e7d51f010cfbc2
+Source0:	http://dl.sourceforge.net/mozillapl/firefox.%{version}.pl-PL.langpack.xpi
+# Source0-md5:	2173fd4b3b653c21072882279e142fd4
 Source1:	%{name}-installed-chrome.txt
 URL:		http://www.firefox.pl/
 BuildRequires:	unzip
@@ -52,8 +52,8 @@ cat %{_firefoxdir}/chrome/*-installed-chrome.txt >%{_firefoxdir}/chrome/installe
 %files
 %defattr(644,root,root,755)
 %{_chromedir}/pl-PL.jar
-%{_chromedir}/pl-unix.jar
-%{_chromedir}/PL.jar
+#%{_chromedir}/pl-unix.jar
+#%{_chromedir}/PL.jar
 %{_chromedir}/%{name}-installed-chrome.txt
 #%{_firefoxdir}/defaults/*
 #%{_firefoxdir}/searchplugins/*
