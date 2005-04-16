@@ -1,3 +1,6 @@
+# TODO:
+#  - do something with *.rdf file, there if file conflict with other lang packages
+#
 Summary:	Polish resources for Mozilla-firefox
 Summary(pl):	Polskie pliki jêzykowe dla Mozilli-firefox
 Name:		mozilla-firefox-lang-pl
