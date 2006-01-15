@@ -57,7 +57,7 @@ cat %{_firefoxdir}/chrome/*-installed-chrome.txt >%{_firefoxdir}/chrome/installe
 
 %files
 %defattr(644,root,root,755)
-%{_chromedir}/pl.jar
+%{_chromedir}/pl-PL.jar
 #%{_chromedir}/pl-unix.jar
 #%{_chromedir}/PL.jar
 %{_chromedir}/%{name}-installed-chrome.txt
