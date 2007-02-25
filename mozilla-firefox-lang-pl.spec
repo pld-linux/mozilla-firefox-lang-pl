@@ -4,20 +4,21 @@
 Summary:	Polish resources for Mozilla-firefox
 Summary(pl):	Polskie pliki jêzykowe dla Mozilli-firefox
 Name:		mozilla-firefox-lang-pl
-Version:	2.0.0.1
+Version:	2.0.0.2
 Release:	1
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/%{version}/linux-i686/xpi/pl.xpi
-# Source0-md5:	14d3bb924aeac290d4c501fd5b29b4be
+# Source0-md5:	53db0bc51f752f8c0e171f4a6dc143ad
 Source1:	pl-PL.manifest
 URL:		http://www.firefox.pl/
 BuildRequires:	unzip
 Requires:	mozilla-firefox >= %{version}
 Provides:	mozilla-firefox-lang-resources = %{version}
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_firefoxdir	%{_libdir}/mozilla-firefox
+%define		_firefoxdir	%{_datadir}/mozilla-firefox
 %define		_chromedir	%{_firefoxdir}/chrome
 
 %description
