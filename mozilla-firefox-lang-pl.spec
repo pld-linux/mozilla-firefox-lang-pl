@@ -9,8 +9,8 @@ Version:	2.0.0.12
 Release:	1
 License:	MPL 1.1 or GPL v2+ or LGPL v2.1+
 Group:		X11/Applications/Networking
-Source0:	http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/%{version}/linux-i686/xpi/%{_lang}.xpi
-# Source0-md5:	6b2137992523f4bb0f7ff5b2cdeae0b4
+Source0:	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/%{version}/linux-i686/xpi/%{_lang}.xpi
+# Source0-md5:	d760dd5da598382c734ef9ac5d92b726
 Source1:	pl-PL.manifest
 URL:		http://www.firefox.pl/
 BuildRequires:	unzip
