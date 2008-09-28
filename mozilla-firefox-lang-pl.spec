@@ -1,33 +1,32 @@
 # TODO:
 #  - do something with *.rdf file, there if file conflict with other lang packages
 #
+%define		_lang		pl
 Summary:	Polish resources for Mozilla-firefox
-Summary(pl):	Polskie pliki jêzykowe dla Mozilli-firefox
-Name:		mozilla-firefox-lang-pl
-Version:	1.5
-Release:	2
-License:	GPL
-Group:		X11/Applications/Networking
-Source0:	http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/%{version}/linux-i686/xpi/pl.xpi
-# Source0-md5:	1864b9b0c82b9d30018a9537336e56bf
-Source1:	%{name}-installed-chrome.txt
-Source2:	pl-PL.manifest
+Summary(pl.UTF-8):	Polskie pliki jÄ™zykowe dla Mozilli-firefox
+Name:		mozilla-firefox-lang-%{_lang}
+Version:	2.0.0.17
+Release:	1
+License:	MPL 1.1 or GPL v2+ or LGPL v2.1+
+Group:		I18n
+Source0:	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/%{version}/linux-i686/xpi/%{_lang}.xpi
+# Source0-md5:	042bf2ad5857ae57ce7dbd3a8d83d344
+Source1:	pl-PL.manifest
 URL:		http://www.firefox.pl/
 BuildRequires:	unzip
-Requires(post,postun):	mozilla-firefox >= %{version}
-Requires(post,postun):	textutils
 Requires:	mozilla-firefox >= %{version}
 Provides:	mozilla-firefox-lang-resources = %{version}
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_firefoxdir	%{_libdir}/mozilla-firefox
+%define		_firefoxdir	%{_datadir}/mozilla-firefox
 %define		_chromedir	%{_firefoxdir}/chrome
 
 %description
 Polish resources for Mozilla-firefox.
 
-%description -l pl
-Polskie pliki jêzykowe dla Mozilli-firefox.
+%description -l pl.UTF-8
+Polskie pliki jÄ™zykowe dla Mozilli-firefox.
 
 %prep
 
@@ -41,7 +40,6 @@ mv -f $RPM_BUILD_ROOT%{_libdir}/chrome/* $RPM_BUILD_ROOT%{_chromedir}
 mv -f $RPM_BUILD_ROOT%{_libdir}/*.rdf $RPM_BUILD_ROOT%{_firefoxdir}/defaults/profile
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_chromedir}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_chromedir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,5 +48,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_chromedir}/pl-PL.jar
 %{_chromedir}/pl-PL.manifest
-%{_chromedir}/%{name}-installed-chrome.txt
 %{_firefoxdir}/defaults/profile/*.rdf
