@@ -2,12 +2,12 @@
 Summary:	Polish resources for Firefox
 Summary(pl.UTF-8):	Polskie pliki językowe dla Firefoksa
 Name:		mozilla-firefox-lang-%{lang}
-Version:	3.6.13
+Version:	3.6.15
 Release:	1
 License:	MPL 1.1 or GPL v2+ or LGPL v2.1+
 Group:		I18n
 Source0:	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/%{version}/linux-i686/xpi/%{lang}.xpi
-# Source0-md5:	90f208ac152252452850404b31102b0d
+# Source0-md5:	9274f064acdbf55b842a0067acb7bf19
 URL:		http://www.firefox.pl/
 BuildRequires:	unzip
 Requires:	mozilla-firefox >= %{version}
